@@ -3,6 +3,7 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.commands;
+
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 
 import edu.wpi.first.wpilibj.Timer;
@@ -26,7 +27,6 @@ public class PIDdriveStraight extends CommandBase {
   double rightTargetError = 0;
   double lastTimestamp = 0;
   double lastError = 0;
-  double Target;
   private final Timer m_timer = new Timer();
   
   public PIDdriveStraight() {
@@ -53,7 +53,6 @@ public class PIDdriveStraight extends CommandBase {
     rightTargetError = 0;
     lastTimestamp = Timer.getFPGATimestamp();
     lastError = 0;
-    Target = 10;
  
 
     
@@ -64,7 +63,7 @@ public class PIDdriveStraight extends CommandBase {
   public void execute() {
         // Start PID things
     // Calculations
-
+    double Target = 10;
     double m_rfEncoder = RobotContainer.driveTrain.rightFront.getSelectedSensorPosition(0)/ticksPerFoot;
     double m_lfEncoder = RobotContainer.driveTrain.leftFront.getSelectedSensorPosition(0)/ticksPerFoot;
     double rightError = Target - m_rfEncoder;
@@ -104,7 +103,7 @@ public class PIDdriveStraight extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return true;
+    return false;
   }
     
 }

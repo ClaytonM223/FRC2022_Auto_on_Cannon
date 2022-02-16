@@ -47,8 +47,6 @@ public class RobotContainer {
   public static Tube3_OFF tube3_OFF = new Tube3_OFF();
   public static Tube4_ON tube4_ON = new Tube4_ON();
   public static Tube4_OFF tube4_OFF = new Tube4_OFF();
-  public static PIDdriveStraight pidDriveStraight = new PIDdriveStraight();
-  public static PIDturn pidTurn = new PIDturn(0);
 
   public static final Joystick joystick = new Joystick(Constants.JOYSTICK_ID);
   public static final JoystickButton tube1button = new JoystickButton(joystick, Constants.TUBE_1_BUTTON_ID);
